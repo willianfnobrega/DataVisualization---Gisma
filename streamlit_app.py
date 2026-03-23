@@ -691,7 +691,7 @@ st.markdown("Interactive financial data visualization built from Natura balance 
 
 folder_path = st.text_input(
     "Source folder path",
-    value=r"final_project/GITHUB/SOURCE"
+    value="final_project/GITHUB/SOURCE"
 )
 
 if os.path.exists(folder_path):

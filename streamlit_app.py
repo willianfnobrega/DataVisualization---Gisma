@@ -5,6 +5,7 @@ import plotly.graph_objects as go
 import streamlit as st
 import plotly.subplots
 from plotly.subplots import make_subplots
+from pathlib import Path
 
 st.set_page_config(
     page_title="Natura Financial Dashboard",
@@ -689,10 +690,10 @@ def build_bs_donut_2021_2025(df):
 st.title("Natura Financial After Pandemics")
 st.markdown("Interactive financial data visualization built from Natura balance sheet files.")
 
-folder_path = st.text_input(
-    "Source folder path",
-    value="final_project/GITHUB/SOURCE"
-)
+BASE_DIR = Path(__file__).resolve().parent
+folder_path = BASE_DIR / "SOURCE"
+st.write("Using folder:", folder_path)
+
 
 if os.path.exists(folder_path):
     df_balance = load_balance_statement(folder_path)

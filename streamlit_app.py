@@ -615,7 +615,7 @@ def build_bs_donut_2021_2025(df):
         rows=1,
         cols=2,
         specs=[[{'type': 'domain'}, {'type': 'domain'}]],
-        horizontal_spacing=0.05
+        horizontal_spacing=0.30
     )
 
     fig.add_trace(
@@ -708,11 +708,34 @@ if os.path.exists(folder_path):
 
     Paragraph4 = "  With the current assets vs liabilities graph we can see how they suffered in 2021 with current liabilities" \
     "higher than their current assets, tendency that, if kept, could lead the company to bankrupcy." \
-    "Thankfully, we also see they recovered, with a highlight in 2024"
+    "Thankfully, we also see they recovered, with a highlight in 2024 where current assets reached its peak."
 
+    Paragraph5 = "  What can make us wonder is what is behind this increasement? A liquidity of long term assets? Increasements of clients flow?"
 
+    Paragraph6 = "  A look in their main assets before and after the pandemic may allow us to find the answer for the previous question."
+
+    Paragraph7 = "  For financial assets we were able to see a decrease comparing to the beggining of the pandemic, becoming to us clear that such account is not the reason for the growth."
+
+    Paragraph8 = "  For cash and equivalents we notice a very timid growth, also not the reason for their recovery."
+
+    Paragraph9 = "  Now when we see the accounts receivable, we are able to understand what hapened. A great increasement in the clients flow was the reason for their recovery, indicating a very sustainable growth."
+
+    Paragraph10 = "  Continuing our investigation, we now know Natura has enough in their current assets to cover short term liabilities." \
+    "But for a deeper review, we must also see what happened to their liabilities."
+
+    Paragraph11 = "  We can notice that in 2021 the company had a majority of their liabilities as of third-parties financings, situation that has been changed along the years," \
+    "highlighting to us where the income from their accounts receivable have also been directed." \
+    "Something that raises a problem is the usage of the other liabilities account, which for information purposes is not very rich and not good practice from the company, since it represents a great part of their" \
+    "short term liabilities."
+
+    Paragraph12 = " To enrich our project, we must also understand what is happening with their long term operations." \
+    "Understending their main long term assets accounts, we can see how most of their focus goes to long term investments instead of adquiring fixed assets, a practice open to be questioned." \
+    "An interesting observation point is from 2024 to 2025 when the company is able to leverage their assets in comparison to long term liabilities, which appears greatly under control."
+
+    Paragraph13 = "  To close this presentation, we will have an overview of their balance sheets." \
+    "The graph below al"
     st.subheader("Current Assets vs Current Liabilities")
-    st.markdown()
+    #st.markdown()
     fig_current = build_current_assets_liabilities_chart(df_balance)
     st.plotly_chart(fig_current, use_container_width=True)
 

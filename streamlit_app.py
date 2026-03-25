@@ -698,7 +698,21 @@ st.write("Using folder:", folder_path)
 if os.path.exists(folder_path):
     df_balance = load_balance_statement(folder_path)
 
+    Paragraph1 = "  During the pandemic, many retail businesses suffered with a low clients flow and other financial issues," \
+    "Natura, the brazilian cosmetics company, was no excession."
+
+    Paragraph2 = "  In this project, we will investigate, using data visualization, the impact of the pandemic in the company balance statements."
+    
+    Paragraph3 = "  Current Assets and Liabilities are useful to show how much does the company have in their easily accessible assets to cover liabilities." \
+    "A comparison between them allow us to see if the company has enough to cover for their short term operations."
+
+    Paragraph4 = "  With the current assets vs liabilities graph we can see how they suffered in 2021 with current liabilities" \
+    "higher than their current assets, tendency that, if kept, could lead the company to bankrupcy." \
+    "Thankfully, we also see they recovered, with a highlight in 2024"
+
+
     st.subheader("Current Assets vs Current Liabilities")
+    st.markdown()
     fig_current = build_current_assets_liabilities_chart(df_balance)
     st.plotly_chart(fig_current, use_container_width=True)
 

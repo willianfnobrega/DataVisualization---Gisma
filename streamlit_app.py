@@ -733,7 +733,7 @@ if os.path.exists(folder_path):
     "An interesting observation point is from 2024 to 2025 when the company is able to leverage their assets in comparison to long term liabilities, which appears greatly under control."
 
     Paragraph13 = "  To close this presentation, we will have an overview of their balance sheets." \
-    "The graph below al"
+    "The pie chart will allow us to easily see how it is divided. "
     st.subheader("Current Assets vs Current Liabilities")
     #st.markdown()
     fig_current = build_current_assets_liabilities_chart(df_balance)

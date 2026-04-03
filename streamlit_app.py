@@ -698,60 +698,77 @@ st.write("Using folder:", folder_path)
 if os.path.exists(folder_path):
     df_balance = load_balance_statement(folder_path)
 
-    Paragraph1 = "  During the pandemic, many retail businesses suffered with a low clients flow and other financial issues," \
-    "Natura, the brazilian cosmetics company, was no excession."
+    Link_GitHub = "https://github.com/willianfnobrega/DataVisualization---Gisma"
+
+    Paragraph1 = "  During the pandemic, many retail businesses suffer from a low clients flow and other financial issues," \
+    " Natura, the brazilian cosmetics company, was no exception."
 
     Paragraph2 = "  In this project, we will investigate, using data visualization, the impact of the pandemic in the company balance statements."
     
     Paragraph3 = "  Current Assets and Liabilities are useful to show how much does the company have in their easily accessible assets to cover liabilities." \
-    "A comparison between them allow us to see if the company has enough to cover for their short term operations."
+    " A comparison between them allow us to see if the company has enough to cover for their short term operations."
 
     Paragraph4 = "  With the current assets vs liabilities graph we can see how they suffered in 2021 with current liabilities" \
-    "higher than their current assets, tendency that, if kept, could lead the company to bankrupcy." \
-    "Thankfully, we also see they recovered, with a highlight in 2024 where current assets reached its peak."
+    " higher than their current assets, tendency that, if kept, could lead the company to bankrupcy." \
+    " Thankfully, we also see they recovered, with a highlight in 2024 where current assets reached their peak."
 
-    Paragraph5 = "  What can make us wonder is what is behind this increasement? A liquidity of long term assets? Increasements of clients flow?"
+    Paragraph5 = "  It makes us wonder, what is behind this increase? A liquidity of long term assets? Increase of clients flow?"
 
     Paragraph6 = "  A look in their main assets before and after the pandemic may allow us to find the answer for the previous question."
 
-    Paragraph7 = "  For financial assets we were able to see a decrease comparing to the beggining of the pandemic, becoming to us clear that such account is not the reason for the growth."
+    Paragraph7 = "  For financial assets we were able to see a decrease comparing to the beggining of the pandemic, which make it clear that such account is not the reason for the growth."
 
-    Paragraph8 = "  For cash and equivalents we notice a very timid growth, also not the reason for their recovery."
+    Paragraph8 = "  For cash and equivalents we notice a very slight growth, also not the reason for their recovery."
 
-    Paragraph9 = "  Now when we see the accounts receivable, we are able to understand what hapened. A great increasement in the clients flow was the reason for their recovery, indicating a very sustainable growth."
+    Paragraph9 = "  Now when we see the accounts receivable, we are able to understand what hapened. A great increase in the clients flow was the reason for their recovery, indicating a very sustainable growth."
 
     Paragraph10 = "  Continuing our investigation, we now know Natura has enough in their current assets to cover short term liabilities." \
-    "But for a deeper review, we must also see what happened to their liabilities."
+    " But for a deeper review, we must also see what happened to their liabilities."
 
     Paragraph11 = "  We can notice that in 2021 the company had a majority of their liabilities as of third-parties financings, situation that has been changed along the years," \
-    "highlighting to us where the income from their accounts receivable have also been directed." \
-    "Something that raises a problem is the usage of the other liabilities account, which for information purposes is not very rich and not good practice from the company, since it represents a great part of their" \
-    "short term liabilities."
+    " highlighting to us where the income from their accounts receivable has been invested." \
+    " Something that raises a concern is the usage of the other liabilities account, which for information purposes is not very rich and not good practice from the company, since it represents a great part of their" \
+    " short term liabilities."
 
     Paragraph12 = " To enrich our project, we must also understand what is happening with their long term operations." \
-    "Understending their main long term assets accounts, we can see how most of their focus goes to long term investments instead of adquiring fixed assets, a practice open to be questioned." \
-    "An interesting observation point is from 2024 to 2025 when the company is able to leverage their assets in comparison to long term liabilities, which appears greatly under control."
+    " Understanding their main long term assets accounts, we can see how most of their focus goes to long term investments instead of acquiring fixed assets, a practice open to be questioned." \
+    " An interesting observation point is from 2024 to 2025 when the company is able to leverage their assets in comparison to long term liabilities, which appears greatly under control."
 
     Paragraph13 = "  To close this presentation, we will have an overview of their balance sheets." \
-    "The pie chart will allow us to easily see how it is divided. "
+    " The pie chart will allow us to easily see how it is divided. In the end we were able to see how they controlled their liabilities and settled for a sustainable business."
+
+    st.subheader("Introduction")
+    st.markdown(Paragraph1)
+    st.markdown(Paragraph2)
+
     st.subheader("Current Assets vs Current Liabilities")
-    #st.markdown()
+    st.markdown(Paragraph3)
+    st.markdown(Paragraph4)
+    st.markdown(Paragraph5)
     fig_current = build_current_assets_liabilities_chart(df_balance)
     st.plotly_chart(fig_current, use_container_width=True)
 
     st.subheader("Main Assets Comparison - Pandemic and After Pandemic")
+    st.markdown(Paragraph6)
+    st.markdown(Paragraph7)
+    st.markdown(Paragraph8)
+    st.markdown(Paragraph9)
     fig_mainAssets = build_main_assets_comparison_chart(df_balance)
     st.plotly_chart(fig_mainAssets, use_container_width=True)
 
-    st.subheader("Main Short Term Liabilities Along the Years")
+    st.subheader("Main Short Term Liabilities Through the Years")
+    st.markdown(Paragraph10)
+    st.markdown(Paragraph11)
     fig = plot_short_liabilities_percent_chart(df_balance)
     st.plotly_chart(fig, use_container_width=True)
 
     st.subheader("Main Long Term Assets x Long Term Liabilities")
+    st.markdown(Paragraph12)
     fig_mainLTAxLTL = plot_long_term_assets_chart(df_balance)
     st.plotly_chart(fig_mainLTAxLTL, use_container_width=True)
 
     st.subheader("Balance Sheet - 2021 and 2025")
+    st.markdown(Paragraph13)
     fig_FSPieChart = build_bs_donut_2021_2025(df_balance)
     st.plotly_chart(fig_FSPieChart, use_container_width=True)
 

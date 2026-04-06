@@ -735,7 +735,11 @@ if os.path.exists(folder_path):
     " An interesting observation point is from 2024 to 2025 when the company is able to leverage their assets in comparison to long term liabilities, which appears greatly under control."
 
     Paragraph13 = "  To close this presentation, we will have an overview of their balance sheets." \
-    " The pie chart will allow us to easily see how it is divided. In the end we were able to see how they controlled their liabilities and settled for a sustainable business."
+    " The pie chart will allow us to easily see how it is divided. In the end we were able to see how they controlled their liabilities and settled for a sustainable business." \
+    " With a growth in equity, lead by an increase of their capital reserves and changes in the patrimony, the company shows their perspective of continuity. Such continuity is also visible by the way Natura was able to control their liabilities, increasing the levarage of their assets."
+
+    Paragraph14 = "  Natura was able to recover after the pandemic, mainly because of this organic growth in clients, but the growth itself without good management practices would not be able to sustain through the years, the company was able to handle this growth with great strategies, controlling their libailities, specially long term, increasing their equity and investing In short term assets."
+    Paragraph15 = "  A space for improvement is in the usage of the account “Other liabilities” as mentioned, since the account represents big part of their statements."
 
     st.subheader("Introduction")
     st.markdown(Paragraph1)
@@ -772,6 +776,9 @@ if os.path.exists(folder_path):
     fig_FSPieChart = build_bs_donut_2021_2025(df_balance)
     st.plotly_chart(fig_FSPieChart, use_container_width=True)
 
+    st.subheader("Conclusion")
+    st.markdown(Paragraph14)
+    st.markdown(Paragraph15)
 
 else:
     st.error("The provided folder path does not exist. Please check the path and try again.")

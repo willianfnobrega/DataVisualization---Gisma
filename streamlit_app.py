@@ -775,7 +775,7 @@ if os.path.exists(folder_path):
     st.markdown(Paragraph13)
     fig_FSPieChart = build_bs_donut_2021_2025(df_balance)
     st.plotly_chart(fig_FSPieChart, use_container_width=True)
-
+    
     st.subheader("Conclusion")
     st.markdown(Paragraph14)
     st.markdown(Paragraph15)
